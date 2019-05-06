@@ -17,13 +17,14 @@ export default class App extends Component {
   }
   filterArray(filterValue, filterProperty) {
     return this.state.music.filter(track => {
+      let filterBool = false
       if (filterProperty === "all") {
         if (
           track.trackName.toLowerCase().includes(filterValue.toLowerCase()) ||
           track.artistName.toLowerCase().includes(filterValue.toLowerCase()) ||
           track.collectionName.toLowerCase().includes(filterValue.toLowerCase())
         ) {
-          return track
+          filterBool = true
         }
       } else {
         if (
@@ -31,9 +32,10 @@ export default class App extends Component {
             .toLowerCase()
             .includes(filterValue.toLowerCase())
         ) {
-          return track
+          filterBool = true
         }
       }
+      return filterBool
     })
   }
   modViewData(newData) {
