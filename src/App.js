@@ -5,7 +5,7 @@ import TrackList from './components/TrackList';
 
 export default class App extends Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
       music: [],
       playerRef: React.createRef()
