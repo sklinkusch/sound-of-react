@@ -44,10 +44,7 @@ export default class TrackListItem extends Component {
     return `${(Number(rawPrice).toFixed(2))} ${currency}`
   }
   render() {
-    const { trackId, artworkUrl100, trackName, collectionName, artistName, releaseDate, trackPrice, currency } = this.props.music;
-    const playId = `play_${trackId}`
-    const pauseId = `pause_${trackId}`
-    const playerId = `musicplay_${trackId}`
+    const { trackId, artworkUrl100, trackName, collectionName, artistName, releaseDate, trackPrice, currency, previewUrl } = this.props.music;
     let trackShortName;
     let collectionShortName;
     let artistShortName;
@@ -79,10 +76,9 @@ export default class TrackListItem extends Component {
       artistShortName = artistName
     }
     return (
-      <div className="row">
-        <span className="fas fa-play" id={playId} />
-        <span className="fas fa-pause" id={pauseId} />
-        <audio id={playerId} loop src=""></audio>
+      <div className="row" key={trackId}>
+        <span className="fas fa-play" onClick={() => this.props.playMusic(previewUrl)} />
+        <span className="fas fa-pause" onClick={() => this.props.pauseMusic()} />
         <img src={artworkUrl100} alt="cover" />
         <div>{trackShortName}<br /><span className="small collection">{collectionShortName}</span></div>
         <div>{artistShortName}<br /><span className="small reldate">{(this.getDate(releaseDate))}</span></div>

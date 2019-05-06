@@ -7,7 +7,8 @@ export default class App extends Component {
   constructor(props) {
     super()
     this.state = {
-      music: []
+      music: [],
+      playerRef: React.createRef()
     }
   }
   componentDidMount() {
@@ -38,12 +39,23 @@ export default class App extends Component {
   modViewData(newData) {
     this.setState({ viewData: newData })
   }
+  pauseMusic() {
+    const element = this.state.playerRef
+    element.current.pause()
+    element.current.src = ""
+  }
+  playMusic(musicUrl) {
+    const element = this.state.playerRef
+    element.current.src = musicUrl
+    element.current.play()
+  }
   render() {
     const music = this.state.viewData || this.state.music
     return (
       <div className="App">
         <SearchBar searchItems={i => this.searchItems(i)} updateView={(i, j, k) => this.updateView(i, j, k)} />
-        <TrackList music={music} />
+        <audio loop src="" ref={this.state.playerRef} />
+        <TrackList music={music} playMusic={(i) => this.playMusic(i)} pauseMusic={() => this.pauseMusic()} />
       </div>
     );
   }
