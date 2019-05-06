@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -29,5 +29,109 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* lobster-regular - latin */
+/* @font-face {*/
+  /* font-family: 'Lobster'; */
+  /* font-style: normal; */
+  /* font-weight: 400; */
+  /* src: url('../fonts/lobster-v20-latin-regular.eot'); IE9 Compat Modes */
+  /* src: local('Lobster Regular'), local('Lobster-Regular'),
+       url('../fonts/lobster-v20-latin-regular.eot?#iefix') format('embedded-opentype'), IE6-IE8 */
+       /* url('../fonts/lobster-v20-latin-regular.woff2') format('woff2'), Super Modern Browsers */
+       /* url('../fonts/lobster-v20-latin-regular.woff') format('woff'), Modern Browsers */
+       /* url('../fonts/lobster-v20-latin-regular.ttf') format('truetype'), Safari, Android, iOS */
+       /* url('../fonts/lobster-v20-latin-regular.svg#Lobster') format('svg'); Legacy iOS */
+/* }  */
+body {
+  background-color: rgb(175,25,100);
+  color: white;
+}
+header,
+main {
+  width: 85%;
+  margin: 15px auto;
+}
+/* h1 {
+  font-family: 'Lobster';
+} */
+.trackNum {
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+}
+.row:hover {
+  background-color: #ffa5f0;
+  color: black;
+}
+
+.row > * {
+  flex: 1;
+}
+
+.row > img {
+  width: auto;
+  flex: 0 0 100px;
+}
+
+.row > span {
+  flex: 0 0 15px;
+}
+.row > audio {
+  flex: 0 0 0;
+}
+.row > div:last-child {
+  flex: 0 0 70px;
+  width: auto;
+}
+.small {
+  font-size: 0.8em;
+}
+@media all and (max-width: 700px){
+  img {
+    display: none;
+  }
+  .row {
+    border-bottom: 1px solid rgb(205,55,130);
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+  .row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .row > div:last-child{
+    flex: 0 0 70px;
+  }
+}
+@media all and (max-width: 500px){
+  img {
+    display: none;
+  }
+  .row {
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(205,55,130);
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+  .row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .row > div {
+    flex: 0 0 100%;
   }
 }
