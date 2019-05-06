@@ -29,7 +29,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar onClick={i => this.searchItems(i)} />
         <TrackList music={this.state.music} />
       </div>
     );

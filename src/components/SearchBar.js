@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function SearchBar() {
+export default function SearchBar(props) {
+  const inputRef = React.createRef()
   return (
     <header>
       <select id="togglesort" name="togglesort">
@@ -23,8 +24,8 @@ export default function SearchBar() {
         <option value="collectionName">Album</option>
       </select>
       <input type="text" id="filter" placeholder="Enter your filter string" />
-      <input type="text" id="searchfield" placeholder="Enter your search string" />
-      <button id="searchbutton">Search</button>
-    </header>
+      <input type="text" id="searchfield" placeholder="Enter your search string" ref={inputRef} />
+      <button id="searchbutton" onClick={() => props.onClick(inputRef.current.value)}>Search</button>
+    </header >
   )
 }
