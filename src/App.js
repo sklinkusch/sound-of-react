@@ -62,7 +62,7 @@ export default class App extends Component {
   sortAlphabet(data, property, direction) {
     let mapped = data.map((track, index) => {
       let prop
-      if (track[property] == undefined) {
+      if (track[property] === undefined) {
         prop = ""
       } else {
         prop = track[property]
