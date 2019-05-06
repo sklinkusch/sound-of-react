@@ -6,11 +6,12 @@ export default class TrackList extends Component {
     super()
   }
   render() {
+    const numTracks = this.props.music.length
     return (
       <div>
         <h1>My Tracks</h1>
-        <p>NUM music tracks from iTunes</p>
-        {this.props.music && this.props.music.length > 0 ? this.props.music.map(track => <TrackListItem />) : <div>No tracks have been found</div>}
+        <p>{numTracks} music tracks from iTunes</p>
+        {this.props.music && numTracks > 0 ? this.props.music.map((track, index) => <TrackListItem music={track} key={index} />) : <div>No tracks have been found</div>}
       </div>
     )
   }
