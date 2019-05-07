@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import TrackList from './TrackList';
+import Player from './Player';
 
 export default class App extends Component {
   constructor(props) {
     super(props)
+    this.playerRef = React.createRef()
     this.state = {
       music: [],
-      playerRef: React.createRef()
     }
   }
   componentDidMount() {
@@ -41,21 +42,21 @@ export default class App extends Component {
     this.setState({ viewData: newData })
   }
   pauseMusic() {
-    const element = this.state.playerRef
-    element.current.pause()
-    element.current.src = ""
+    const player = this.playerRef;
+    player.current.pause();
+    player.current.src = "";
   }
   playMusic(musicUrl) {
-    const element = this.state.playerRef
-    element.current.src = musicUrl
-    element.current.play()
+    const player = this.playerRef;
+    player.current.src = musicUrl;
+    player.current.play();
   }
   render() {
     const music = this.state.viewData || this.state.music
     return (
       <div className="App">
         <SearchBar searchItems={i => this.searchItems(i)} updateView={(i, j, k) => this.updateView(i, j, k)} />
-        <audio loop src="" ref={this.state.playerRef} />
+        <Player playerRef={this.playerRef} />
         <TrackList music={music} playMusic={(i) => this.playMusic(i)} pauseMusic={() => this.pauseMusic()} />
       </div>
     );
