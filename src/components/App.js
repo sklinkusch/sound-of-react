@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import SearchBar from './components/SearchBar';
-import TrackList from './components/TrackList';
+import '../styles/App.css';
+import SearchBar from './SearchBar';
+import TrackList from './TrackList';
 
 export default class App extends Component {
   constructor(props) {
