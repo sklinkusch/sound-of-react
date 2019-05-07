@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/App.scss';
 import SearchBar from './SearchBar';
 import TrackList from './TrackList';
 
