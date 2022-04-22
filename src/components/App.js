@@ -117,7 +117,7 @@ export default class App extends Component {
   }
   updateView(filterValue, filterProperty, sortValue) {
     const filtered =
-      filterValue === "" || typeof filterValue === undefined
+      filterValue === "" || typeof filterValue === "undefined"
         ? this.state.music
         : this.filterArray(filterValue, filterProperty)
     let sorted
