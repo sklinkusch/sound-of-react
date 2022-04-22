@@ -10,9 +10,9 @@ select {
 input {
   background-color: white;
   border: 1px solid rgb(205,55,130);
-  &:active {
-    background-color: antiquewhite;
-  }
+}
+input:active {
+  background-color: antiquewhite;
 }
 button {
   background-color: antiquewhite;

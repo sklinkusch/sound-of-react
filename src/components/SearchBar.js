@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/SearchBar.scss"
+import "../styles/SearchBar.css"
 
 export default function SearchBar(props) {
   const inputRef = React.createRef()
