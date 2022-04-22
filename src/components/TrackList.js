@@ -1,6 +1,6 @@
 import React from 'react'
 import TrackListItem from './TrackListItem';
-import "../styles/TrackList.scss";
+import "../styles/TrackList.css";
 import Title from './Title';
 import Counter from './Counter';
 
