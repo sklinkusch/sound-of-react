@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/Counter.scss";
+import "../styles/Counter.css";
 
 export default function Counter(props) {
   const { count } = props;

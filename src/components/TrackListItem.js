@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "../styles/TrackListItem.scss";
+import "../styles/TrackListItem.css";
 
 export default class TrackListItem extends Component {
   constructor(props) {
