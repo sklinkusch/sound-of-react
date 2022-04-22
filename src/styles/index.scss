@@ -1,11 +1,9 @@
-@import './variables';
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background-color: $def_background;
-  color: $def_font;
+  background-color: rgb(175,25,100);
+  color: white;
 }
